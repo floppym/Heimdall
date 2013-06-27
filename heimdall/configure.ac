@@ -1,6 +1,7 @@
 AC_INIT([Heimdall], [1.4.0], [bug-report@glassechidna.com.au], [heimdall], [http://www.glassechidna.com.au/])
 AC_PREREQ([2.59])
 PKG_CHECK_MODULES([DEPS], [libusb-1.0 >= 1.0.8])
+PKG_CHECK_VAR([udevdir], [udev], [udevdir], , [udevdir='$(libdir)/udev'])
 AC_CHECK_PROG(udevadminstalled, udevadm, "yes")
 AC_CANONICAL_TARGET
 AM_INIT_AUTOMAKE([1.10 -Wall no-define foreign])
